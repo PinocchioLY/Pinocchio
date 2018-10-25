@@ -6,6 +6,8 @@ public class SmbmsUser {
 	private String userName;
 	private String userPassword;
 	private int gender;
+	private int schoolnum;
+	private int classnum;
 	/**
 	 * @return the id
 	 */
@@ -65,5 +67,29 @@ public class SmbmsUser {
 	 */
 	public void setGender(int gender) {
 		this.gender = gender;
+	}
+	/**
+	 * @return the schoolnum
+	 */
+	public int getSchoolnum() {
+		return schoolnum;
+	}
+	/**
+	 * @param schoolnum the schoolnum to set
+	 */
+	public void setSchoolnum(int schoolnum) {
+		this.schoolnum = schoolnum;
+	}
+	/**
+	 * @return the classnum
+	 */
+	public int getClassnum() {
+		return classnum;
+	}
+	/**
+	 * @param classnum the classnum to set
+	 */
+	public void setClassnum(int classnum) {
+		this.classnum = classnum;
 	}
 }
