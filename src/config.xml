@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <!-- 加载数据库配置文件 默认使用此种方式  -->
+  <properties resource="database.properties"></properties>
+  <!-- 使用内部的直接配置 -->
+ <!--  <properties>
+  	<property name="driver" value="com.mysql.jdbc.Driver"/>
+  	<property name="url" value="jdbc:mysql://localhost:3306/smbms"/>
+  	<property name="username" value="root"/>
+  	<property name="password" value="1234"/>
+  </properties> -->
+  
+  <!-- 如果同时配置了内部和外部的配置文件则优先使用外部的配置文件 -->
+ <!--  <properties resource="database.properties">
+  	<property name="driver" value="com.mysql.jdbc.Driver"/>
+  	<property name="url" value="jdbc:mysql://localhost:3306/smbms"/>
+  	<property name="username" value="root"/>
+  	<property name="password" value="1234"/>
+  </properties> -->
+  
+  
+  <settings>
+  	<!-- 用于对框架的全局设置进行处理 -->
+    <!-- 日志处理 -->
+  	<setting name="logImpl" value="STDOUT_LOGGING"/>
+  	<!-- <setting name="logImpl" value="LOG4J"/> -->
+  </settings>
+  
+  <typeAliases>
+  	<!--设置该指定包下的所有类起别名 别名默认为类的名字  -->
+  	<package name="com.pojo"/>
+  </typeAliases>
+  
+  <!-- <typeAliases>
+  	每个都起别名
+  	<typeAlias type="com.pojo.SmbmsUser" alias="SmbmsUser"/>
+  </typeAliases> -->
+  
+  
+  
+  
+  <!-- 创建运行环境  -->
+  <environments default="dev">
+    <environment id="dev">
+      <!-- 设置事务管理 JDBC 由代码控制  -->
+      <transactionManager type="JDBC"></transactionManager>
+      <dataSource type="POOLED"><!-- 用于创建数据库连接的设置 -->
+         <property name="driver" value="${driver}"/>
+         <property name="url" value="${url}"/>
+      	 <property name="username" value="${username}"/>
+      	 <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+ <!--  此处放置mapper文件 -->
+  <mappers>
+<!--   注册 -->
+    <mapper resource="com/smbms/dao/ProviderMapper.xml"/>
+    <mapper resource="com/smbms/dao/SmbmsUserMapper.xml"/>
+  	<mapper resource="com/smbms/dao/SmbmsAddressMapper.xml"/> 
+  </mappers>
+</configuration>

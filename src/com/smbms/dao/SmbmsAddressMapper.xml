@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smbms.dao.SmbmsAddressMapper">
+	<!--resulttype 可以直接使用类的别名，前提是在核心配置文件中配置别名扫描  -->
+	<select id="getUserAddress" resultType="SmbmsUserAddress">
+		select * FROM `smbms_address`
+	</select>
+	
+</mapper>
