@@ -12,13 +12,13 @@ public class SmbmsUser {
 	 * @return the id
 	 */
 	public int getId() {
-		return id;
+		return id+2;
 	}
 	/**
 	 * @param id the id to set
 	 */
 	public void setId(int id) {
-		this.id = id;
+		this.id = id+2;
 	}
 	/**
 	 * @return the userCode
@@ -60,13 +60,13 @@ public class SmbmsUser {
 	 * @return the gender
 	 */
 	public int getGender() {
-		return gender;
+		return gender+1;
 	}
 	/**
 	 * @param gender the gender to set
 	 */
 	public void setGender(int gender) {
-		this.gender = gender;
+		this.gender = gender+1;
 	}
 	/**
 	 * @return the schoolnum
